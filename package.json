@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.19.1",
+        "@typescript-eslint/parser": "^6.19.1",
+        "eslint": "^8.56.0",
+        "sass": "^1.70.0",
+        "typescript": "^5.3.3"
+    },
+    "scripts": {
+        "sass": "sass --watch style.scss style.css",
+        "tsc": "tsc --watch"
+    }
+}
