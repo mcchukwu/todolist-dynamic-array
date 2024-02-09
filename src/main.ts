@@ -1,3 +1,7 @@
+import "./style.css";
+console.log("Stay");
+//create a dynamic Array
+
 const todos = [
     {
         Header: "Wash the plates",
@@ -9,5 +13,3 @@ const todos = [
             "Do the detailing, sweep and mop all areaas with touch of fineese and hertfelt gratitude to be alife on the earth",
     },
 ];
-
-//

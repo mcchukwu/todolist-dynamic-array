@@ -7,7 +7,11 @@
         "typescript": "^5.3.3"
     },
     "scripts": {
+        "dev": "vite",
         "sass": "sass --watch style.scss style.css",
         "tsc": "tsc --watch"
+    },
+    "dependencies": {
+        "vite": "^5.1.0"
     }
 }
