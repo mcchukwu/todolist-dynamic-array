@@ -1,17 +1,16 @@
 /* imports */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* Variables */
 
-$secondary-color: #f7f3eb;
-$primary-color: #181818;
+/* Variables */
+$primary-color: #f7f3eb;
+$secondary-color: #181818;
 $accent-color1: #11aaaa;
 $accent-color2: #1ad1d1;
 $accent-color3: #cf9e18;
 
-$primary-font: "inter";
+$primary-font: "inter", sans-serif;
 
 /* Browser Reset */
-
 *,
 *::before,
 *::after {
@@ -22,21 +21,6 @@ $primary-font: "inter";
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section {
-    display: block;
 }
 
 ol,
@@ -57,7 +41,6 @@ button {
 }
 
 /* General Styling */
-
 :root {
     font-family: $primary-font;
     font-size: 62.5%;
@@ -78,8 +61,8 @@ body {
 }
 
 /* Create todo component */
-
-.create-sec {
+.create-form,
+.update-form {
     max-width: 100%;
     display: flex;
     gap: 1rem;
@@ -87,7 +70,8 @@ body {
     margin: 3rem 0 3rem 0;
 }
 
-.create-input {
+.create-input,
+.update-input {
     width: 85%;
     height: 100%;
     border: 0.1rem solid $secondary-color;
@@ -95,7 +79,8 @@ body {
     padding: 0 1.5rem;
 }
 
-.create-input input {
+.create-input input,
+.update-input input {
     outline: none;
     background: none;
     color: $secondary-color;
@@ -104,15 +89,18 @@ body {
     border-bottom: 0.1rem solid rgba($secondary-color, 0.2);
 }
 
-.create-input input::placeholder {
+.create-input input::placeholder,
+.update-input input::placeholder {
     opacity: 0.5;
 }
 
-.create-input input:last-child {
+.create-input :last-child,
+.update-input :last-child {
     border: 0;
 }
 
-.create-btn {
+.create-btn,
+.update-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,13 +111,13 @@ body {
     background-color: $accent-color1;
     transition: background-color 0.5s ease-out;
     border-radius: 0.5rem;
-}
 
-.create-btn:hover {
-    background-color: $accent-color2;
-    .add-lines {
-        width: 2.5rem;
-        height: 4.5rem;
+    &:hover {
+        background-color: $accent-color2;
+        .add-lines {
+            width: 2.5rem;
+            height: 4.5rem;
+        }
     }
 }
 
@@ -157,11 +145,11 @@ body {
 }
 
 /* Tabs component */
-
 .tabs {
+    justify-self: center;
     display: flex;
     gap: 2.5rem;
-    margin: 1.5rem auto;
+    margin: 1.5rem;
 }
 
 .tab a {
@@ -188,7 +176,6 @@ body {
 }
 
 /* Todo box component */
-
 .todos-box {
     display: grid;
     max-width: 100%;
@@ -248,21 +235,26 @@ body {
     margin: 0.1rem 0 0;
 }
 
-.todo-right button svg {
+.todo-right button {
     cursor: pointer;
-    margin: 0.2rem;
+    margin-left: 1rem;
     width: 1.8rem;
     height: 1.8rem;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
 
     path {
         fill: $secondary-color;
         transition: all 0.2s ease-in-out;
     }
-}
 
-.todo-right button svg:hover {
-    path {
-        opacity: 0.7;
+    &:hover {
+        path {
+            opacity: 0.7;
+        }
     }
 }
 
@@ -273,18 +265,17 @@ body {
         stroke: $secondary-color;
         transition: all 0.2s ease-in-out;
     }
-}
 
-.todo-right .star-icon svg:hover {
-    path {
-        opacity: 1;
-        fill: goldenrod;
-        stroke: goldenrod;
+    &:hover {
+        path {
+            opacity: 1;
+            fill: goldenrod;
+            stroke: goldenrod;
+        }
     }
 }
 
 /* Custom check-box */
-
 .todo-left input[type="checkbox"] {
     cursor: pointer;
     opacity: 0;
@@ -338,7 +329,11 @@ body {
 
 /* Other Styles */
 .no-todos {
-    margin: auto;
+    h2 {
+        font-weight: 600;
+    }
+    margin: 1rem;
+    text-align: center;
 }
 
 .hidden {

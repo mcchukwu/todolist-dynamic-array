@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <xml></xml>
         <title>Todolist</title>
-        <link rel="stylesheet" href="src/style.css" />
+        <link rel="stylesheet" href="src/style.scss" />
     </head>
 
     <body>
@@ -14,19 +14,23 @@
         <!-- The create todo section -->
 
         <div class="container">
-            <div class="create-sec">
-                <div class="create-input">
+            <form class="create-form">
+                <fieldset class="create-input">
                     <input
                         type="text"
-                        name="add-heading"
+                        name="addHeading"
                         placeholder="Heading"
-                        aria-label="input heading" />
+                        aria-label="input heading"
+                        class="title-field"
+                        data-index="1" />
                     <input
                         type="text"
-                        name="add-Description"
+                        name="addDescription"
                         placeholder="Describtion"
-                        aria-label="input Description" />
-                </div>
+                        aria-label="input description"
+                        class="description-field"
+                        data-index="2" />
+                </fieldset>
                 <button
                     type="submit"
                     aria-label="add todo button"
@@ -36,7 +40,7 @@
                         <div class="add-line2"></div>
                     </div>
                 </button>
-            </div>
+            </form>
 
             <!-- The tabs -->
 
@@ -70,82 +74,13 @@
                 </div>
 
                 <div class="todo-list">
-                    <ul class="todos">
-                        <li class="todo">
-                            <div class="todo-left">
-                                <input
-                                    type="checkbox"
-                                    aria-label="todo"
-                                    id="todo0" />
-                                <label for="todo0">
-                                    <svg
-                                        width="40"
-                                        height="39"
-                                        viewBox="0 0 56 56"
-                                        fill="none">
-                                        <path
-                                            class="checkbox"
-                                            d="M10 1H46C50.9706 1 55 5.02944 55 10V46C55 50.9706 50.9706 55 46 55H10C5.02944 55 1 50.9706 1 46V10C1 5.02944 5.02944 1 10 1Z"
-                                            stroke="#181818"
-                                            stroke-width="2" />
-                                        <path
-                                            class="check"
-                                            d="M11.5 28.5L25.5 39L45 14.5"
-                                            stroke="#181818"
-                                            stroke-width="2" />
-                                    </svg>
-                                    <div class="todo-text">
-                                        <h2>Make my hair</h2>
-                                        <p>Adipisicing elit. Quis.</p>
-                                    </div>
-                                </label>
-                            </div>
-
-                            <div class="todo-right">
-                                <button
-                                    type="button"
-                                    aria-label="star-icon"
-                                    class="star-icon">
-                                    <svg
-                                        width="40"
-                                        height="39"
-                                        viewBox="0 0 40 39"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M13.3275 12.7685L13.8509 12.6911L14.0814 12.2149L19.2753 1.48436L19.2755 1.48378C19.3456 1.33881 19.4527 1.21953 19.5822 1.13735C19.7116 1.05529 19.8591 1.01282 20.0081 1.01282C20.1572 1.01282 20.3047 1.05529 20.434 1.13735C20.5636 1.21953 20.6707 1.33881 20.7407 1.48378L20.7409 1.48424L25.933 12.2148L26.1634 12.691L26.6867 12.7684L38.3015 14.4875L38.3018 14.4876C38.4418 14.5083 38.5758 14.5666 38.6897 14.6589C38.8038 14.7513 38.8939 14.8746 38.9488 15.0178C39.0037 15.161 39.0206 15.3175 38.9972 15.4706C38.975 15.6153 38.9179 15.7503 38.8328 15.8637L38.7338 15.9737L30.3359 24.3081L29.9682 24.673L30.0542 25.1839L32.0403 36.9819L32.0404 36.9823C32.0662 37.1355 32.0516 37.2927 31.9984 37.4374C31.9452 37.5819 31.8562 37.707 31.7427 37.8012C31.6294 37.8952 31.4954 37.9553 31.3551 37.9775C31.2223 37.9985 31.0862 37.9852 30.959 37.9382L30.8325 37.8789L20.4924 32.3223L20.0196 32.0682L19.5465 32.3218L9.1588 37.8913L9.15842 37.8915C9.03103 37.9599 8.88955 37.9918 8.74812 37.9855C8.60667 37.9791 8.46801 37.9345 8.34631 37.8545C8.22444 37.7743 8.12326 37.661 8.05525 37.5243C7.99059 37.3943 7.95871 37.2487 7.9634 37.1014L7.98019 36.9564L9.96028 25.1837L10.0462 24.673L9.67862 24.3081L1.26431 15.9558L1.26339 15.9549C1.15797 15.8505 1.07978 15.7176 1.03902 15.5687C0.998237 15.4198 0.996932 15.2621 1.03529 15.1124C1.07362 14.9628 1.14968 14.8284 1.2535 14.7221C1.3514 14.6219 1.47056 14.55 1.5992 14.511L1.74143 14.4815L13.3275 12.7685Z"
-                                            stroke="#181818"
-                                            stroke-width="2" />
-                                    </svg>
-                                </button>
-                                <button type="button" aria-label="edit-icon">
-                                    <svg
-                                        width="36"
-                                        height="37"
-                                        viewBox="0 0 36 37"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M35.4225 8.30843C36.2024 7.50687 36.2024 6.17095 35.4225 5.4105L30.7432 0.601166C30.0033 -0.200389 28.7035 -0.200389 27.9236 0.601166L24.2441 4.36231L31.743 12.0696M0.00744629 29.2927V37H7.50641L29.6233 14.2482L22.1244 6.5409L0.00744629 29.2927Z"
-                                            fill="#181818" />
-                                    </svg>
-                                </button>
-                                <button type="button" aria-label="delete-icon">
-                                    <svg
-                                        width="32"
-                                        height="37"
-                                        viewBox="0 0 32 37">
-                                        <path
-                                            d="M6 37C4.9 37 3.95867 36.5978 3.176 35.7934C2.39333 34.989 2.00133 34.0208 2 32.8889V6.16667H0V2.05556H10V0H22V2.05556H32V6.16667H30V32.8889C30 34.0194 29.6087 34.9876 28.826 35.7934C28.0433 36.5992 27.1013 37.0014 26 37H6ZM10 28.7778H14V10.2778H10V28.7778ZM18 28.7778H22V10.2778H18V28.7778Z"
-                                            fill="#181818" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul class="todos"></ul>
                 </div>
 
-                <p class="no-todos hidden">No Todos</p>
+                <div class="no-todos hidden">
+                    <h2>Empty</h2>
+                    <p>Add a todo above...</p>
+                </div>
             </div>
         </div>
     </body>

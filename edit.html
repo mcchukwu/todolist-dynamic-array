@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit - todo-list</title><link rel="stylesheet" href="src/style.scss" />
+</head>
+
+<body>
+    <script defer type="module" src="src/edit.ts"></script>
+
+    <!-- The update todo section -->
+
+    <div class="container">
+        <form class="update-form">
+            <fieldset class="update-input">
+                <input
+                    type="text"
+                    name="addHeading"
+                    placeholder="Heading"
+                    aria-label="input heading"
+                    class="title-field"
+                    data-index="1" />
+                <input
+                    type="text"
+                    name="addDescription"
+                    placeholder="Describtion"
+                    aria-label="input description"
+                    class="description-field"
+                    data-index="2" />
+            </fieldset>
+            <button
+                type="submit"
+                aria-label="update todo button"
+                class="update-btn">
+                <div class="add-lines">
+                    <div class="add-line1"></div>
+                    <div class="add-line2"></div>
+                </div>
+            </button>
+        </form>
+    
+</body>
+</html>
